@@ -2,3 +2,16 @@ es:
   layouts:
     application:
       shoes: Lista de Zapatillas
+      titles:
+        shoes:
+          new: Nueva zapatilla
+          create: Nueva zapatilla
+          edit: Actualizar zapatilla
+          update: Actualizar zapatilla
+          index: Listar Zapatillas
+      button:
+        new: Guardar zapatilla
+        create: Guardar zapatilla
+        edit: Actualizar zapatilla
+        update: Actualizar zapatilla
+      cancel: Cancelar

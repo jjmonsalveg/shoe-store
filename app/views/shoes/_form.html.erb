@@ -1,42 +1,79 @@
-<%= form_with(model: shoe, local: true) do |form| %>
-  <% if shoe.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(shoe.errors.count, "error") %> prohibited this shoe from being saved:</h2>
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--1-col"></div>
+  <div class="mdl-cell mdl-cell--10-col">
 
-      <ul>
-      <% shoe.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+    <div class="demo-card-wide mdl-card mdl-shadow--2dp m">
+      <div class="mdl-card__title">
+        <h2 class="mdl-card__title-text"><%= t("layouts.application.titles.shoes.#{action_name}") %></h2>
+      </div>
+      <div class="mdl-card__supporting-text">
+        <div class="mdl-grid">
+          <div class="mdl-cell mdl-cell--1-col"></div>
+          <div class="mdl-cell mdl-cell--11-col">
+            <%= form_with(model: shoe, local: true, id: 'form-shoes') do |form| %>
+                <% if shoe.errors.any? %>
+                    <div id="error_explanation">
+                      <h2><%= pluralize(shoe.errors.count, "error") %> prohibited this shoe from being saved:</h2>
+
+                      <ul>
+                        <% shoe.errors.full_messages.each do |message| %>
+                            <li><%= message %></li>
+                        <% end %>
+                      </ul>
+                    </div>
+                <% end %>
+
+                <div  class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <%= form.text_field :model, id: :shoe_model , class: 'mdl-textfield__input'%>
+                  <%= form.label :model,class: 'mdl-textfield__label' %>
+                </div>
+
+                <div  class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <%= form.text_field :brand, id: :shoe_brand , class: 'mdl-textfield__input'%>
+                  <%= form.label :brand,class: 'mdl-textfield__label' %>
+                </div>
+
+                <div  class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <%= form.text_field :isbn, id: :shoe_isbn , class: 'mdl-textfield__input'%>
+                  <%= form.label :isbn,class: 'mdl-textfield__label' %>
+                </div>
+
+                <div  class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <%= form.number_field :release_year, id: :shoe_release_year, class: 'mdl-textfield__input' %>
+                  <%= form.label :release_year,class: 'mdl-textfield__label'  %>
+                </div>
+
+                <div  class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <%= form.number_field :sku, id: :shoe_sku , class: 'mdl-textfield__input'%>
+                  <%= form.label :sku,class: 'mdl-textfield__label' %>
+                </div>
+
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="mdl-card__actions mdl-card--border">
+        <div class="mdl-grid">
+          <div class="mdl-cell mdl-cell--5-col"></div>
+          <div class="mdl-cell mdl-cell--7-col">
+
+          <%= link_to t('layouts.application.cancel'), shoes_path,
+                      class:"mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" %>
+          <input type="submit" value=<%= t"layouts.application.button.#{action_name}" %>
+              form="form-shoes" class="mdl-button mdl-js-button mdl-button--raised
+               mdl-js-ripple-effect mdl-button--accent">
+          </div>
+        </div>
+      </div>
+      <div class="mdl-card__menu">
+        <%= link_to content_tag('i','visibility', class: 'material-icons'), shoe  if action_name.in?(['update','edit'])%>
+        <%= link_to content_tag('i','view_list', class: 'material-icons'), shoes_path %>
+
+      </div>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.label :model %>
-    <%= form.text_field :model, id: :shoe_model %>
   </div>
 
-  <div class="field">
-    <%= form.label :brand %>
-    <%= form.text_field :brand, id: :shoe_brand %>
-  </div>
+</div>
 
-  <div class="field">
-    <%= form.label :isbn %>
-    <%= form.text_field :isbn, id: :shoe_isbn %>
-  </div>
 
-  <div class="field">
-    <%= form.label :release_year %>
-    <%= form.number_field :release_year, id: :shoe_release_year %>
-  </div>
-
-  <div class="field">
-    <%= form.label :sku %>
-    <%= form.number_field :sku, id: :shoe_sku %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
