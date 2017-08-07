@@ -1,12 +1,13 @@
+
 # == Schema Information
 #
 # Table name: shoes
 #
 #  id           :integer          not null, primary key
-#  model        :string
-#  isbn         :string
-#  sku          :string
-#  release_year :integer
+#  model        :string           not null
+#  isbn         :string           not null
+#  sku          :string           not null
+#  release_year :integer          not null
 #  edition_date :date
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
@@ -21,3 +22,15 @@
 #  index_shoes_on_sku                 (sku) UNIQUE
 #
 
+
+FactoryGirl.define do
+  factory :shoe do
+    model {}
+    isbn  {}
+    sku   {}
+    release_year{}
+    edition_date
+    image
+    brand_id
+  end
+end

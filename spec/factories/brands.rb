@@ -14,6 +14,6 @@
 
 FactoryGirl.define do
   factory :brand do
-    name "MyString"
+    name { %w[Nike Adiddas Converse Prada Arena Azzura Gronchi][rand(0..3)] }
   end
 end
