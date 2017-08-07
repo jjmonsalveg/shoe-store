@@ -13,4 +13,5 @@
 //= require rails-ujs
 //= require_tree .
 //= require material-design-lite/material.min.js
+//= require mdl-components-ext/package/material.components.ext.min.js
 //= require snackbar

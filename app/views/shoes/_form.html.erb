@@ -10,7 +10,7 @@
         <div class="mdl-grid">
           <div class="mdl-cell mdl-cell--1-col"></div>
           <div class="mdl-cell mdl-cell--11-col">
-            <%= form_with(model: shoe, local: true, id: 'form-shoes') do |form| %>
+            <%= form_with(model: shoe, local: true, id: 'form-shoes', multipart: true  ) do |form| %>
 
                 <%= render 'shared/errors_messages_model', model: shoe %>
 
@@ -37,6 +37,12 @@
                 <div  class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                   <%= form.number_field :sku, id: :shoe_sku , class: 'mdl-textfield__input'%>
                   <%= form.label :sku,class: 'mdl-textfield__label' %>
+                </div>
+
+                <div class="mdl-file mdl-js-file mdl-file--floating-label">
+                  <%= form.file_field :image, id: 'shoe[image]'%>
+                  <%= form.hidden_field :image_cache %>
+                  <%= form.label :image ,class: 'mdl-file__label', for: 'shoe[image]'  %>
                 </div>
 
             <% end %>

@@ -32,6 +32,15 @@
               <strong>Sku:</strong>
               <%= @shoe.sku %>
             </p>
+
+            <div class="demo-card-image mdl-card mdl-shadow--2dp" id='shoe-image-card'
+                 data-path=<%= "#{@shoe.image_url}"  %>>
+              <div class="mdl-card__title mdl-card--expand"></div>
+              <div class="mdl-card__actions">
+                <span class="demo-card-image__filename"><%= @shoe.image.to_s.split('/').last%></span>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
