@@ -11,8 +11,10 @@
 #  edition_date :date
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
+#  image        :string
 #
-
 class Shoe < ApplicationRecord
-  validates :brand , presence: true
+  validates :brand, presence: true
+  mount_uploader :image, ImageUploader
+  attr_accessor :image_cache
 end

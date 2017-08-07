@@ -128,6 +128,11 @@ es:
       too_long: es demasiado largo (%{count} caracteres máximo)
       too_short: es demasiado corto (%{count} caracteres mínimo)
       wrong_length: no tiene la longitud correcta (%{count} caracteres exactos)
+      carrierwave_processing_error: "No se redimensiono imagen."
+      carrierwave_integrity_error: "No es imagen."
+      carrierwave_download_error: "No se puede descargar imagen."
+      extension_whitelist_error: "No se permite extension %{extension} , tipos permitidos: %{allowed_types}"
+      extension_blacklist_error: "No se permite extension %{extension} , tipos prohibidos: %{prohibited_types}"
     template:
       body: ! 'Se encontraron problemas con los siguientes campos:'
       header:

@@ -34,9 +34,29 @@ gem 'jbuilder', '~> 2.5'
 # A simple Rails wrapper for Google Material Icons
 gem 'material_icons'
 
+#upload and managment files
+gem 'carrierwave', '~> 1.0'
+gem 'rmagick', '~> 2.13.4'
+
+#serializers
+gem 'active_model_serializers', '0.10.6'
+
+#gem resolve api cross origen resource sharing
+gem 'rack-cors', :require => 'rack/cors'
+
+#data tables
+gem 'rails-assets-jquery', source: 'https://rails-assets.org'
+gem 'rails-assets-datatables', source: 'https://rails-assets.org'
+gem 'kaminari' , '1.0.1'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+
+  #test framework
+  gem 'rspec-rails', '3.5.1'
+  gem 'factory_girl_rails' , '4.8.0'
+
 end
 
 group :development do
@@ -48,17 +68,27 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 
   #annotate models
-  gem 'annotate'
+  gem 'annotate', '2.7.2'
 
   #tools for debug
-  gem 'better_errors'
-  gem 'binding_of_caller'
-  gem 'meta_request'
+  gem 'better_errors', '2.3.0'
+  gem 'binding_of_caller', '0.7.2'
+  gem 'meta_request', '0.4.3'
 
   #reload changes in hot
   gem 'guard-livereload', '~> 2.5', require: false
+  gem 'guard-rspec', require: false
 
 end
+
+group :test do
+  #best way to thest associations
+  gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git', branch: 'rails-5'
+  gem 'capybara', '2.15.1'
+  gem 'launchy', '2.4.3'
+  gem 'faker','1.8.4'
+end
+
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
