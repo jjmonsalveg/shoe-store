@@ -50,7 +50,7 @@
         <%= link_to content_tag('i','edit', class: 'material-icons'), edit_shoe_path(@shoe) ,
                     class:"mdl-js-ripple-effect" %>
         <%= link_to content_tag('i','delete', class: 'material-icons'), @shoe,
-                    method: :delete, data: { confirm: 'Are you sure?' } %>
+                    method: :delete, data: { confirm: t('helpers.alert.confirm') } %>
 
         <%= link_to content_tag('i','view_list', class: 'material-icons'), shoes_path %>
 

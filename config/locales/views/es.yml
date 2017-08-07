@@ -2,6 +2,7 @@ es:
   layouts:
     application:
       shoes: Lista de Zapatillas
+      shoe: Zapatilla
       titles:
         shoes:
           new: Nueva zapatilla

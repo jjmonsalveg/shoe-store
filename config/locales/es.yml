@@ -140,6 +140,13 @@ es:
       create: Crear %{model}
       submit: Guardar %{model}
       update: Actualizar %{model}
+    alert:
+      confirm: '¿Seguro de Realizar esta operación?'
+  notice:
+    success:
+      create: "%{model} satisfactoriamente guardado(a)."
+      update: "%{model} satisfactoriamente actualizado(a)."
+      delete: " %{model} satisfactoriamente eliminado(a)."
   number:
     currency:
       format:

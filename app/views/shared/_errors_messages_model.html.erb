@@ -2,7 +2,8 @@
     <div id="error_explanation" class="alert">
       <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
       <h5><%= t('errors.template.header', count: model.errors.count,
-                model: t("activerecord.models.#{model.class.to_s.downcase}"))  %></h5>
+                model: t("activerecord.models.#{model.class.to_s.downcase}").singularize)%>
+      </h5>
 
       <ul>
         <% model.errors.full_messages.each do |message| %>
