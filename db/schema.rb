@@ -13,11 +13,11 @@
 ActiveRecord::Schema.define(version: 20170807042043) do
 
   create_table "shoes", force: :cascade do |t|
-    t.string "model"
+    t.string "model", null: false
     t.string "brand"
-    t.string "isbn"
-    t.string "sku"
-    t.integer "release_year"
+    t.string "isbn", null: false
+    t.string "sku", null: false
+    t.integer "release_year", null: false
     t.date "edition_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

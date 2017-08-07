@@ -21,8 +21,8 @@
 #  index_shoes_on_sku                 (sku) UNIQUE
 #
 
-class Shoe < ApplicationRecord
-  validates :brand, presence: true
-  mount_uploader :image, ImageUploader
-  attr_accessor :image_cache
+require 'rails_helper'
+
+RSpec.describe Shoe, type: :model do
+  pending "add some examples to (or delete) #{__FILE__}"
 end

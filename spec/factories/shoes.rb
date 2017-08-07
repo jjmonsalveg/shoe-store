@@ -21,8 +21,3 @@
 #  index_shoes_on_sku                 (sku) UNIQUE
 #
 
-class Shoe < ApplicationRecord
-  validates :brand, presence: true
-  mount_uploader :image, ImageUploader
-  attr_accessor :image_cache
-end
