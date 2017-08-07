@@ -1,6 +1,6 @@
 class RemoveBrandFromShoe < ActiveRecord::Migration[5.1]
   def change
-    if Rails.env.production? && Shoe.any?
+    if Shoe.any?
       say_with_time 'save existing brands for sensitive client data ' do
         Shoe.where.not(brand: nil).distinct.find_each do |shoe|
           say "marca: #{shoe.brand} ha sido creada"
