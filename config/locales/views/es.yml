@@ -9,6 +9,7 @@ es:
           edit: Actualizar zapatilla
           update: Actualizar zapatilla
           index: Listar Zapatillas
+          show: "Modelo: %{model}"
       button:
         new: Guardar zapatilla
         create: Guardar zapatilla

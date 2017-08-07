@@ -7,8 +7,15 @@
 .demo-card-wide > .mdl-card__title {
   color: #fff;
   height: 176px;
-  background: url('cartoon-shoes.jpg') center / cover;
+  background: url('cartoon-shoes.jpg')  center / cover #46B6AC;
 }
 .demo-card-wide > .mdl-card__menu {
   color: #fff;
+}
+
+
+.mdl-card__menu {
+  height: 16px;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.5);
 }

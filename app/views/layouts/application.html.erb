@@ -31,8 +31,12 @@
     </nav>
   </div>
   <main class="mdl-layout__content">
+    <%= render 'shared/flash_message' %>
+
     <div class="page-content">
-      <div class="mdl-grid"><%= yield %></div>
+      <div class="mdl-grid">
+        <%= yield %>
+      </div>
     </div>
   </main>
   <footer class="mdl-mini-footer">
