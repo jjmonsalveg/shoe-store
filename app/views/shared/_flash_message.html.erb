@@ -1,0 +1,15 @@
+<div id="demo-snackbar-flash">
+  <div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--1-col"></div>
+    <div class="mdl-cell mdl-cell--10-col">
+      <% flash.each do |message_type , message| %>
+          <% message_type = (['notice','alert'].include? message_type)  ? 'success': message_type %>
+          <%= content_tag :div,class:"alert " + message_type do   %>
+              <%= message %>
+              <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+          <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+

@@ -1,5 +1,6 @@
+<%= provide(:title, I18n.t('layouts.application.titles.shoes.index')) %>
+
 <div class="mdl-cell mdl-cell--12-col">
-  <p id="notice"><%= notice %></p>
 
   <h3><%= I18n.t('activerecord.models.shoe') %></h3>
 
@@ -37,7 +38,9 @@
               <%= link_to content_tag('i','edit', class: 'material-icons'), edit_shoe_path(shoe) %>
             </td>
             <td class="mdl-data-table__cell--non-numeric">
-              <%= link_to content_tag('i','delete', class: 'material-icons'), shoe, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <%= link_to content_tag('i','delete', class: 'material-icons'),
+                          shoe, method: :delete,
+                          data: { confirm: t('helpers.alert.confirm')  } %>
             </td>
           </tr>
         <% end %>

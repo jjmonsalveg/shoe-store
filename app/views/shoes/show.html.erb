@@ -1,29 +1,62 @@
-<p id="notice"><%= notice %></p>
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--1-col"></div>
+  <div class="mdl-cell mdl-cell--10-col">
 
-<p>
-  <strong>Model:</strong>
-  <%= @shoe.model %>
-</p>
+    <div class="demo-card-wide mdl-card mdl-shadow--2dp m">
+      <div class="mdl-card__title">
+        <h2 class="mdl-card__title-text" >
+          <%= t('layouts.application.titles.shoes.show',model: @shoe.model) %>
+        </h2>
+      </div>
+      <div class="mdl-card__supporting-text">
+        <div class="mdl-grid">
+          <div class="mdl-cell mdl-cell--1-col"></div>
+          <div class="mdl-cell mdl-cell--11-col">
 
-<p>
-  <strong>Brand:</strong>
-  <%= @shoe.brand %>
-</p>
+            <p>
+              <strong>Brand:</strong>
+              <%= @shoe.brand %>
+            </p>
 
-<p>
-  <strong>Isbn:</strong>
-  <%= @shoe.isbn %>
-</p>
+            <p>
+              <strong>Isbn:</strong>
+              <%= @shoe.isbn %>
+            </p>
 
-<p>
-  <strong>Release year:</strong>
-  <%= @shoe.release_year %>
-</p>
+            <p>
+              <strong>Release year:</strong>
+              <%= @shoe.release_year %>
+            </p>
 
-<p>
-  <strong>Sku:</strong>
-  <%= @shoe.sku %>
-</p>
+            <p>
+              <strong>Sku:</strong>
+              <%= @shoe.sku %>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="mdl-card__actions mdl-card--border">
+        <div class="mdl-grid">
+          <div class="mdl-cell mdl-cell--7-col"></div>
+          <div class="mdl-cell mdl-cell--5-col">
 
-<%= link_to 'Edit', edit_shoe_path(@shoe) %> |
-<%= link_to 'Back', shoes_path %>
+            <%= link_to t('layouts.application.shoes'), shoes_path,
+                        class:"mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" %>
+
+          </div>
+        </div>
+      </div>
+      <div class="mdl-card__menu">
+        <%= link_to content_tag('i','edit', class: 'material-icons'), edit_shoe_path(@shoe) ,
+                    class:"mdl-js-ripple-effect" %>
+        <%= link_to content_tag('i','delete', class: 'material-icons'), @shoe,
+                    method: :delete, data: { confirm: t('helpers.alert.confirm') } %>
+
+        <%= link_to content_tag('i','view_list', class: 'material-icons'), shoes_path %>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
