@@ -4,7 +4,7 @@ class ShoesController < ApplicationController
   # GET /shoes
   # GET /shoes.json
   def index
-    @shoes = Shoe.all
+    @shoes = Shoe.all.includes(:brand)
   end
 
   # GET /shoes/1
