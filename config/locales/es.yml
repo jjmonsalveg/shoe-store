@@ -3,12 +3,15 @@ es:
   activerecord:
     models:
       shoe: Zapatillas
+      brand: Marca
     attributes:
       shoe:
         model: Modelo
         brand: Marca
         release_year: Año Lanzamiento
         image: Imagen
+      brand:
+        name: Nombre de Marca
   date:
     abbr_day_names:
     - dom

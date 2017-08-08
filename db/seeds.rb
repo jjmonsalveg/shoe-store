@@ -19,10 +19,23 @@ unless Shoe.exists?
     "#{rand.to_s[2..5]}-#{rand.to_s[2..3]}-#{rand.to_s[2..6]}-#{rand(9)}"
   end
 
+  def get_brand(name)
+    Brand.find_by(name: name)
+  end
+
+  Brand.create!([{ name: 'Converse'    },
+                 { name: 'Nike'        },
+                 { name: 'New Balance' },
+                 { name: 'Reebok'      },
+                 { name: 'Puma'        },
+                 { name: 'Vans'        },
+                 { name: 'Etnies'      },
+                 { name: 'Adidas'      }])
+
   Shoe.create([
     {
       model: 'All Star',
-      brand: 'Converse',
+      brand: get_brand('Converse'),
       release_year: 1921,
       sku: '25124',
       isbn: risbn,
@@ -31,7 +44,7 @@ unless Shoe.exists?
     },
     {
       model: 'Air Force',
-      brand: 'Nike',
+      brand: get_brand('Nike'),
       release_year: 1982,
       sku: '82909',
       isbn: risbn,
@@ -40,7 +53,7 @@ unless Shoe.exists?
     },
     {
       model: '574',
-      brand: 'New Balance',
+      brand: get_brand('New Balance'),
       release_year: 1988,
       sku: '51936',
       isbn: risbn,
@@ -49,7 +62,7 @@ unless Shoe.exists?
     },
     {
       model: 'Classic',
-      brand: 'Reebok',
+      brand:get_brand( 'Reebok'),
       release_year: 1983,
       sku: '71150',
       isbn: risbn,
@@ -58,7 +71,7 @@ unless Shoe.exists?
     },
     {
       model: 'Clyde',
-      brand: 'Puma',
+      brand: get_brand('Puma'),
       release_year: 1972,
       sku: '25434',
       isbn: risbn,
@@ -67,7 +80,7 @@ unless Shoe.exists?
     },
     {
       model: 'Off The Wall',
-      brand: 'Vans',
+      brand: get_brand('Vans'),
       release_year: 1976,
       sku: '67235',
       isbn: risbn,
@@ -76,7 +89,7 @@ unless Shoe.exists?
     },
     {
       model: 'Fader',
-      brand: 'Etnies',
+      brand: get_brand('Etnies'),
       release_year: 1992,
       sku: '21224',
       isbn: risbn,
@@ -85,7 +98,7 @@ unless Shoe.exists?
     },
     {
       model: 'Superstar',
-      brand: 'Adidas',
+      brand: get_brand('Adidas'),
       release_year: 1969,
       sku: '13380',
       isbn: risbn,

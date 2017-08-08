@@ -11,4 +11,11 @@ These steps are necessary to the application up and running.
   * Yarn
   * NPM
   
+* Run project:
+  * bundle install
+  * yarn install
+  * rails db:setup
+  * rails s
   
+* Run specs:
+  * bundle exec rspec

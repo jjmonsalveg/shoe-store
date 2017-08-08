@@ -19,9 +19,15 @@
                   <%= form.label :model,class: 'mdl-textfield__label' %>
                 </div>
 
-                <div  class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                  <%= form.text_field :brand, id: :shoe_brand , class: 'mdl-textfield__input'%>
-                  <%= form.label :brand,class: 'mdl-textfield__label' %>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <%= form.select :brand_id,
+                                  options_from_collection_for_select(
+                                      Brand.all,
+                                      :id, :name,
+                                      selected: @shoe.try(:brand).try(:id)),
+                                  {include_blank: ''},
+                                  {class: 'mdl-textfield__input'} %>
+                  <%= form.label :brand_id, class: 'mdl-textfield__label' %>
                 </div>
 
                 <div  class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">

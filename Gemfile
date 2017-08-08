@@ -87,6 +87,7 @@ group :test do
   gem 'capybara', '2.15.1'
   gem 'launchy', '2.4.3'
   gem 'faker','1.8.4'
+  gem 'ffaker', '2.6.0'
 end
 
 

@@ -1,3 +1,4 @@
+
 # == Schema Information
 #
 # Table name: shoes
@@ -20,17 +21,17 @@
 #  index_shoes_on_model_and_brand_id  (model,brand_id) UNIQUE
 #  index_shoes_on_sku                 (sku) UNIQUE
 #
-class Shoe < ApplicationRecord
-  validates :model, presence: true
-  validates :sku, presence: true, uniqueness: true
-  validates_numericality_of :release_year, :greater_than_or_equal_to => 1900
-  validates :release_year, presence: true
-  validates_uniqueness_of :model, scope: :brand_id
-  validates :isbn, presence: true, uniqueness: true
 
+require 'ffaker'
 
-  mount_uploader :image, ImageUploader
-  attr_accessor :image_cache
-
-  belongs_to :brand, optional: true
+FactoryGirl.define do
+  factory :shoe do
+    model { FFaker::Product.model }
+    isbn  { FFaker::Book.isbn }
+    sku   { "#{model}-#{isbn}" }
+    release_year {1971}
+    edition_date { Date.current }
+    image { 'cartoon-shoes.jpg' }
+    brand
+  end
 end
