@@ -34,5 +34,24 @@ module ShoeStore
 
     # Adds the view folder to locales
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', 'views', '*.{rb,yml}').to_s]
+
+    # don't generate RSpec tests for views and helpers
+    config.generators do |g|
+      g.test_framework :rspec, fixture: true
+      g.fixture_replacement :factory_girl, dir: 'spec/factories'
+      g.view_specs false
+      g.helper_specs false
+      g.stylesheets = false
+      g.javascripts = false
+      g.helper = false
+    end
+
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins '*'
+        resource '*', :headers => :any, :methods => [:get, :post, :options]
+      end
+    end
+
   end
 end

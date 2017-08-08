@@ -1,6 +1,5 @@
-<h1>Editing Shoe</h1>
+<%= provide(:title, I18n.t('layouts.application.titles.shoes.edit')) %>
 
 <%= render 'form', shoe: @shoe %>
 
-<%= link_to 'Show', @shoe %> |
-<%= link_to 'Back', shoes_path %>
+

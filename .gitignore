@@ -26,3 +26,17 @@
 .idea
 .DS_Store
 .rvmrc
+
+# Test and misc files
+*.rbc
+capybara-*.html
+.rspec
+/public/system
+/coverage/
+/spec/tmp
+**.orig
+rerun.txt
+pickle-email-*.html
+
+#Uploads files
+/public/uploads/
