@@ -12,5 +12,7 @@
 #  index_brands_on_name  (name) UNIQUE
 #
 class Brand < ApplicationRecord
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true
+
+  has_many :shoes
 end

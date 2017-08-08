@@ -22,15 +22,16 @@
 #  index_shoes_on_sku                 (sku) UNIQUE
 #
 
+require 'ffaker'
 
 FactoryGirl.define do
   factory :shoe do
-    model {}
-    isbn  {}
-    sku   {}
-    release_year{}
-    edition_date
-    image
-    brand_id
+    model { FFaker::Product.model }
+    isbn  { FFaker::Book.isbn }
+    sku   { "#{model}-#{isbn}" }
+    release_year {1971}
+    edition_date { Date.current }
+    image { 'cartoon-shoes.jpg' }
+    brand
   end
 end

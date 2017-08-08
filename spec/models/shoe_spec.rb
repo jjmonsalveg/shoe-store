@@ -24,5 +24,24 @@
 require 'rails_helper'
 
 RSpec.describe Shoe, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  before { @shoe = FactoryGirl.build(:shoe) }
+
+  subject { @shoe }
+
+
+  it { should respond_to(:model) }
+  it { should respond_to(:isbn) }
+  it { should respond_to(:sku) }
+  it { should respond_to(:release_year) }
+  it { should respond_to(:brand_id) }
+  it { should be_valid }
+
+  it { should belong_to :brand }
+
+  it { should validate_presence_of :model }
+  it { should validate_presence_of :isbn  }
+  it { should validate_presence_of :sku   }
+  it { should validate_presence_of :release_year}
+  it { should validate_numericality_of(:release_year).is_greater_than_or_equal_to(1900) }
+  it { should validate_uniqueness_of(:model).scoped_to(:brand_id) }
 end

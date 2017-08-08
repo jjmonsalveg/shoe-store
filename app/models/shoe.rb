@@ -20,9 +20,17 @@
 #  index_shoes_on_model_and_brand_id  (model,brand_id) UNIQUE
 #  index_shoes_on_sku                 (sku) UNIQUE
 #
-
 class Shoe < ApplicationRecord
-  validates :brand, presence: true
+  validates :model, presence: true
+  validates :sku, presence: true, uniqueness: true
+  validates_numericality_of :release_year, :greater_than_or_equal_to => 1900
+  validates :release_year, presence: true
+  validates_uniqueness_of :model, scope: :brand_id
+  validates :isbn, presence: true, uniqueness: true
+
+
   mount_uploader :image, ImageUploader
   attr_accessor :image_cache
+
+  belongs_to :brand, optional: true
 end

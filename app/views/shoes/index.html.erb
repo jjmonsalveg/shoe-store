@@ -28,12 +28,12 @@
         <% @shoes.each do |shoe| %>
           <tr>
             <td class="mdl-data-table__cell--non-numeric"><%= shoe.model %></td>
-            <td class="mdl-data-table__cell--non-numeric"><%= shoe.brand %></td>
+            <td class="mdl-data-table__cell--non-numeric"><%= shoe.brand.name %></td>
             <td class="mdl-data-table__cell--non-numeric"><%= shoe.isbn %></td>
             <td class="mdl-data-table__cell--non-numeric"><%= shoe.release_year %></td>
             <td class="mdl-data-table__cell--non-numeric"><%= shoe.sku %></td>
             <td class="mdl-data-table__cell--non-numeric">
-              <%= image_tag shoe.image_url, class: 'image-shoe-table' %>
+              <%= image_tag shoe.image_url, class: 'image-shoe-table' if shoe.image.present?%>
             </td>
             <td class="mdl-data-table__cell--non-numeric">
               <%= link_to content_tag('i','visibility', class: 'material-icons'), shoe %>
