@@ -19,3 +19,9 @@ These steps are necessary to the application up and running.
   
 * Run specs:
   * bundle exec rspec
+
+* Import postman file:
+  path: ./postman/
+  file:shoe-store.postman_collectionv1.json
+  variable:{{url}}
+  url value: localhost:3000/api/
