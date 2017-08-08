@@ -4,7 +4,10 @@ class ShoesController < ApplicationController
   # GET /shoes
   # GET /shoes.json
   def index
-    @shoes = Shoe.all.includes(:brand)
+    respond_to do |format|
+      format.html
+      format.json { render json: ShoesDatatable.new(view_context) }
+    end
   end
 
   # GET /shoes/1
