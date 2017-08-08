@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     scope module: :v1,
           constraints: ApiConstraints.new(version: 1, default: true) do
-      resources :shoes
+      resources :shoes, except: [:edit,:new]
     end
   end
 end
